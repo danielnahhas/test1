@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "username": "danielnahhas",
+    "password": "qwe123",
+    "cart": []
+  },
+  {
+    "id": 2,
+    "username": "tony123",
+    "password": "123qwe",
+    "cart": []
+  },
+  {
+    "id": 3,
+    "username": "rony123",
+    "password": "123asd",
+    "cart": []
+  },
+  {
+    "id": 4,
+    "username": "dadas",
+    "password": "sup142",
+    "cart": []
+  },
+  {
+    "id": 5,
+    "username": "fadi123",
+    "password": "123fadi",
+    "cart": []
+  }
+]

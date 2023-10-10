@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "title": "GPU",
+      "url": "/products/product1",
+      "price": 10,
+      "details":"how can u play without me :)",
+      "img":"/assets/GPU.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Motherboard",
+      "url": "/products/product2",
+      "price": 20,
+      "details":"How can u build without me XD",
+      "img":"/assets/Motherboard.png"
+    },
+    {
+      "id": 3,
+      "title": "NVME",
+      "url": "/products/product3",
+      "price": 30,
+      "details":"My name is Speeeeeed",
+      "img":"/assets/NVME.jpg"
+    },
+    {
+        "id": 4,
+        "title": "PSU",
+        "url": "/products/product4",
+        "price": 40,
+        "details":"Any one need power ^=^",
+        "img":"/assets/PSU.jpg"
+      },
+      {
+        "id": 5,
+        "title": "RAM",
+        "url": "/products/product5",
+        "price": 50,
+        "details":"I'm smoothe",
+        "img":"/assets/RAM.jpg"
+      }
+
+  ]
