@@ -53,3 +53,45 @@ app.post("/api/register", (req, res) => {
   edituserData(users);
   return res.json({ message: "register successful" });
 });
+
+app.post("/api/addtocart", (req, res) => {
+  const { id, item } = req.body;
+  const regJson = fs.readFileSync("./users.json");
+  const users = JSON.parse(regJson);
+  const usermatched = users.find((users) => users.id === id);
+  if (!usermatched) {
+    res.status(401).json({ message: "user not found" });
+  }
+  usermatched.cart.push(item);
+  edituserData(users);
+  return res.json({ message: "item added to cart" });
+});
+
+app.post("/api/removeFromCart", (req, res) => {
+  const { id, item } = req.body;
+  const userCartJson = fs.readFileSync("./users.json");
+  const userCart = JSON.parse(userCartJson);
+  const usermatched = userCart.find((user) => user.id === id);
+  if (!usermatched) {
+    res.status(401).json({ message: "user not found" });
+  }
+  const itemIndex = usermatched.cart.findIndex((i) => i.id === item.id);
+  if (itemIndex === -1) {
+    res.status(401).json({ message: "item not found" });
+  }
+  usermatched.cart.splice(itemIndex, 1);
+  edituserData(userCart);
+  return res.json({ message: "item has been removed" });
+});
+
+app.post("/api/getUser", (req, res) => {
+  const { id } = req.body;
+  const regJson = fs.readFileSync("./users.json");
+  const users = JSON.parse(regJson);
+  const usermatched = users.find((user) => user.id == id);
+  if (usermatched) {
+    res.json({ user: usermatched });
+  } else {
+    res.status(401).json({ message: "invalid id" });
+  }
+});
