@@ -33,10 +33,6 @@ function LoginPage() {
   };
   return (
     <div id="login_container">
-      <meta
-        name="google-adsense-account"
-        content="ca-pub-6796318579441588"
-      ></meta>
       <div className="card">
         <h4 className="title">Log In!</h4>
         <form>
