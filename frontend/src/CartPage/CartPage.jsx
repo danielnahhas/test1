@@ -1,24 +1,33 @@
 import React, { useContext, useEffect, useState } from "react";
-import { LoginContext, CartContext } from "../App";
+import "./CartPage.css";
+import { CartContext, LoginContext } from "../App";
 import { Link } from "react-router-dom";
 import CartCard from "../CartCard/CartCard";
+
 function CartPage() {
+  // const [user] = useContext(UserContext);
   const [login] = useContext(LoginContext);
-  const [cart] = useContext(CartContext);
-  const [userCart, setUserCart] = useState([]);
+  const [cart, ,] = useContext(CartContext);
+  const [nCart, setNCart] = useState([]);
   useEffect(() => {
-    setUserCart(cart);
+    setNCart(cart);
   }, [cart]);
+
   return (
     <div>
       {login ? (
-        userCart.map((d, i) => {
-          return <CartCard value={d} key={i} />;
-        })
+        nCart.length > 0 ? (
+          nCart.map((item, index) => {
+            return <CartCard key={index} value={item} />;
+          })
+        ) : (
+          <p>
+            Cart Empty go to <Link to={"/"}>Home</Link> to view items
+          </p>
+        )
       ) : (
         <p>
-          <Link to={"/Login"}>Login</Link>
-          to view cart
+          <Link to={"/Login"}>Login</Link> to view items
         </p>
       )}
     </div>

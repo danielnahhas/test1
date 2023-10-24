@@ -1,26 +1,24 @@
 import React, { useContext } from "react";
-import axios from "axios";
-import { UserContext } from "../App";
+import { CartContext } from "../App";
+
 function CartCard(props) {
-  const [user] = useContext(UserContext);
-  const removeCart = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/removeFromCart",
-        { id: user.id, item: props.value }
-      );
-    } catch (error) {
-      console.log(error.response.data.message);
-    }
-  };
+  const [cart, setCart, addtoCart, removeCart] = useContext(CartContext);
+  const value = props.value;
+
   return (
     <div>
-      <img src={props.value.img} alt="pic"></img>
-      <p>{props.value.title}</p>
-      <p>{props.value.price}</p>
-      <p>{props.value.details}</p>
-      <button onClick={removeCart}>Remove</button>
+      <img src={value.img} alt="pic"></img>
+      <p>{value.title}</p>
+      <p>{value.price}</p>
+      <p>{value.details}</p>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          removeCart(value);
+        }}
+      >
+        Remove
+      </button>
     </div>
   );
 }

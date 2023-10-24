@@ -1,15 +1,53 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import "./Header.css";
+import { LoginContext } from "../App";
 function Header() {
+  const [login, setLogin] = useContext(LoginContext);
   return (
-    <div>
-      <Link to={"/"}>Homepage</Link>
-      <Link to={"/product"}>Product Page</Link>
-      <Link to={"/cart"}>Cart</Link>
-      <Link to={"/about"}>About</Link>
-      <Link to={"/contact"}>Contact Us</Link>
-      <Link to={"/login"}>Login</Link>
-      <Link to={"/Register"}>Sign up</Link>
+    <div className="head">
+      <Link className="button-name" to={"/"}>
+        Homepage
+      </Link>
+      <Link className="button-name" to={"/product"}>
+        Product Page
+      </Link>
+      {login ? (
+        <Link className="button-name" to={"/cart"}>
+          Cart
+        </Link>
+      ) : (
+        <></>
+      )}
+      <Link className="button-name" to={"/about"}>
+        About
+      </Link>
+      <Link className="button-name" to={"/contact"}>
+        Contact Us
+      </Link>
+      {!login ? (
+        <Link className="button-name" to={"/login"}>
+          Login
+        </Link>
+      ) : (
+        <button
+          className="button-name"
+          onClick={(e) => {
+            e.preventDefault();
+            setLogin(false);
+            localStorage.removeItem("Token");
+          }}
+        >
+          Log out
+        </button>
+      )}
+      {login ? (
+        <></>
+      ) : (
+        <Link className="button-name" to={"/Register"}>
+          Sign up
+        </Link>
+      )}
     </div>
   );
 }

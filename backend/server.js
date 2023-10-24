@@ -64,7 +64,7 @@ app.post("/api/addtocart", (req, res) => {
   }
   usermatched.cart.push(item);
   edituserData(users);
-  return res.json({ message: "item added to cart" });
+  return res.json({ message: "item added to cart", user: usermatched });
 });
 
 app.post("/api/removeFromCart", (req, res) => {
@@ -81,7 +81,7 @@ app.post("/api/removeFromCart", (req, res) => {
   }
   usermatched.cart.splice(itemIndex, 1);
   edituserData(userCart);
-  return res.json({ message: "item has been removed" });
+  return res.json({ message: "item has been removed", cart: userCart });
 });
 
 app.post("/api/getUser", (req, res) => {
