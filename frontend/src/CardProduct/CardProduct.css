@@ -1,0 +1,14 @@
+img {
+    width: 170px;
+}
+.cards {
+    display: inline-block;
+    width: 200px;
+ height: 300px;
+ margin: 0 auto;
+ border-radius: 8px;
+ z-index: 1;
+ font-size: 14px;
+ align-items: center;
+
+}

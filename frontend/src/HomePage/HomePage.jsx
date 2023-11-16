@@ -1,13 +1,13 @@
 import React from "react";
-
+import "./HomePage.css";
 function HomePage() {
   return (
-    <div>
-      <img src="/assets/Logo.jpg" alt="pic" />
-      <p>Let's build your ideal gaming pc </p>
-      <p>Let's build your ideal gaming pc 2 </p>
-      <p>Hi Rola</p>
-    </div>
+    <body>
+      <div id="homepage_container">
+        <img src="/assets/Logo.jpg" alt="pic" />
+      </div>
+      <p>Hello there welcome to our shop</p>
+    </body>
   );
 }
 

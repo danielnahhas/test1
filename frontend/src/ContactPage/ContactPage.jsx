@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./ContactPage.css";
 function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,10 +30,13 @@ function ContactPage() {
       <form id="contactForm">
         <label htmlFor="name">name</label>
         <input onChange={handleName} id="name" type="text" />
+        <br />
         <label htmlFor="email">email</label>
         <input onChange={handleEmail} id="email" type="text" />
+        <br />
         <label htmlFor="message">message</label>
         <textarea onChange={handleMessage} name="" id="message" rows="4" />
+        <br />
         <button onClick={submit}>Submit</button>
         <p>{errorMessage}</p>
       </form>

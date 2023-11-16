@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./RegisterPage.css";
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,24 +25,34 @@ function Register() {
       });
   };
   return (
-    <div>
-      <h1>Register</h1>
+    <div className="login_container">
+      <div className="card">
+        <h4 className="title">Register</h4>
 
-      <p>
-        <label>Username: </label>
-        <input onChange={handleUser} type="text" placeholder="Username" />
-      </p>
-      <p>
-        <label>password: </label>
-        <input
-          onChange={handlePassword}
-          type="password"
-          placeholder="Password"
-        />
-      </p>
-      <p>
-        <button onClick={submit}>Submit</button>
-      </p>
+        <p>
+          <label className="reglab">Username </label>
+          <input
+            className="input-field"
+            onChange={handleUser}
+            type="text"
+            placeholder="Username"
+          />
+        </p>
+        <p>
+          <label className="reglab">password </label>
+          <input
+            className="input-field"
+            onChange={handlePassword}
+            type="password"
+            placeholder="Password"
+          />
+        </p>
+        <p>
+          <button className="btn" onClick={submit}>
+            Submit
+          </button>
+        </p>
+      </div>
     </div>
   );
 }

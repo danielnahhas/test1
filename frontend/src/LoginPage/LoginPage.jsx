@@ -32,7 +32,7 @@ function LoginPage() {
     }
   };
   return (
-    <div id="login_container">
+    <div className="login_container">
       <div className="card">
         <h4 className="title">Log In!</h4>
         <form>

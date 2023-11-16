@@ -1,6 +1,6 @@
 import React from "react";
 import CardProduct from "../CardProduct/CardProduct";
-
+import "./Product.css";
 function ProductPage(props) {
   return (
     <div>

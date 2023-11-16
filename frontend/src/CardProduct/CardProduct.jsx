@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./CardProduct.css";
 function CardProduct(props) {
   return (
-    <div>
+    <div className="cards">
       <p>
         <img src={props.data.img} alt="pic"></img>
       </p>
